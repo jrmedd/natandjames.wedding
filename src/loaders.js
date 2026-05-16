@@ -1,0 +1,5 @@
+export const indexLoader = () => ({pageTitle: 'Home'})
+export const rsvpLoader = () => ({pageTitle: 'RSVP'})
+export const locationLoader = () => ({pageTitle: 'Location'})
+export const timingsLoader = () => ({pageTitle: 'Timings'})
+export const giftsLoader = () => ({pageTitle: 'Gifts'})
