@@ -11,7 +11,7 @@ const Button = styled(NavLink)(props => css`
   font-family: ${props => props.theme.fonts.body};
   font-weight: 700;
   text-align: center;
-  padding: .75rem 1rem;
+  padding: .75rem 1.5rem;
   border-radius: 0.5rem;
   background: ${props => props.theme.interactive};
   color: ${props => props.theme.background};

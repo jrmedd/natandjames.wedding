@@ -1,0 +1,90 @@
+{
+  "variant": "light",
+  "backgroundColor": "#6f744a",
+  "styles": [
+    {
+      "id": "road",
+      "geometry": {
+        "fillColor": "#f9f6e5",
+        "strokeColor": "#f9f6e5"
+      },
+      "label": {
+        "textFillColor": "#6f744a"
+      }
+    },
+    {
+      "id": "road.local",
+      "label": {
+        "visible": false
+      }
+    },
+    {
+      "id": "road.arterial",
+      "label": {
+        "textFillColor": "#6f744a"
+      }
+    },
+    {
+      "id": "road.highway",
+      "label": {
+        "textFillColor": "#6f744a"
+      }
+    },
+    {
+      "id": "road",
+      "label": {
+        "iconVisible": false
+      }
+    },
+    {
+      "id": "water",
+      "geometry": {
+        "fillColor": "#b8cfd4"
+      }
+    },
+    {
+      "id": "landscape",
+      "geometry": {
+        "fillColor": "#6f744a"
+      }
+    },
+    {
+      "id": "pointOfInterest",
+      "visible": false
+    },
+    {
+      "id": "pointOfInterest.recreation.park",
+      "geometry": {
+        "fillColor": "#6f744a"
+      }
+    },
+    {
+      "id": "pointOfInterest.business",
+      "visible": false
+    },
+    {
+      "id": "transit",
+      "visible": false
+    },
+    {
+      "id": "transit.station.bus",
+      "visible": false
+    },
+    {
+      "id": "administrative",
+      "label": {
+        "textFillColor": "#6f744a"
+      }
+    },
+    {
+      "id": "administrative.landParcel",
+      "label": {
+        "visible": false
+      }
+    },
+    {
+      "id": "landscape.manMade",
+      "visible": false
+    }
+  ]
+}

@@ -33,11 +33,10 @@ const HeadingCore = css`
 
 const Heading = styled.h1(props => css`
   ${HeadingCore};
-  ${props => HeadingSizes[props.$size]};
-  overflow: hidden;
+  ${props => HeadingSizes[props.$size]};;
   transform-origin: top;
   opacity: 1;
-  max-height: 10rem;
+  max-height: 12rem;
   transform: scaleY(1);
   transition:
     opacity .5s ease,

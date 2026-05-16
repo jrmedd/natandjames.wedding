@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react"
-
 import { Stack } from "../components/Layout"
-import { Heading, Paragraph, ScreenReaderOnly } from "../components/Typography"
+import { Heading } from "../components/Typography"
+import { Map } from "../components/Map"
 
 
 export const Component = props => {
@@ -10,6 +9,7 @@ export const Component = props => {
     <Heading $size='l' id='career'>
       Location
     </Heading>
+    <Map />
   </Stack>
   )
 }

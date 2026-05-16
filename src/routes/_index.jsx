@@ -7,7 +7,7 @@ export const Component = () => (
     <Heading $size="xxxl">Nat and James</Heading>
     <Button to='/rsvp' viewTransition>RSVP</Button>
     <Paragraph>
-      Invite you to celebrate their wedding on Saturday 28th November 2026
+      invite you to celebrate their wedding on Saturday 28th November 2026
     </Paragraph>
   </>
 )
