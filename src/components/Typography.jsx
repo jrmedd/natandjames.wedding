@@ -19,6 +19,15 @@ const HeadingSizes =  {
   `
 }
 
+const BodySizes = {
+  l: css`
+    font-size: 1.5rem;
+  `,
+  m: css`
+    font-size: 1rem;
+  `
+}
+
 const HeadingCore = css`
   font-family : ${props => props.theme.fonts.heading};
   font-weight: 600;
@@ -58,7 +67,9 @@ const Legend  = styled.legend(props => css`
 
 const ExternalLink = styled.a(props => css`
   color: ${props => props.theme.interactive};
-  text-decoration-style: wavy;
+  display: inline-block;
+  box-shadow:  0 1px 0 0 ${props => props.theme.interactive};
+  text-decoration: none;
   &:focus {
     outline: 2px solid ${props => props.theme.interactive};
   }
@@ -78,10 +89,10 @@ const InternalLink = styled(Link)(props => css`
 const Paragraph = styled.p(props => css`
   font-family: ${props => props.theme.fonts.body};
   font-weight: 350;
-  font-size: 1.5rem;
+  ${props => BodySizes[props.$size] ?? BodySizes.m};
   text-align: center;
   color: ${props => props.theme.text.body};
-  line-height: 125%;
+  line-height: 150%;
   width: ${props => props.$width ?? '80ch'};
   max-width: 100%;
   flex-grow: 1;
@@ -97,7 +108,11 @@ const UnorderedList = styled.ul(props => css`
   line-height: 125%;
   margin: 0;
   padding-inline-start: 1.5rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
   color: ${props => props.theme.text.body};
+  text-align: center;
   li + li {
     margin-top: 1rem; 
   }

@@ -14,6 +14,7 @@ const StyledMap = styled.div(props => css`
   width: 100%;
   min-height: ${props => props.$minHeight ?? "600px"};
   border: 0;
+  border-radius: .75rem;
 `)
 
 const loadGoogleMapsApi = () => {
