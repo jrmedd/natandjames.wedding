@@ -47,6 +47,17 @@ const StyledLegend = styled.legend(
   `,
 );
 
+const StyledHint = styled.span(
+  (props) => css`
+    display: block;
+    font-family: ${(props) => props.theme.fonts.body};
+    color: ${(props) => props.theme.text.body};
+    font-size: 1rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+  `,
+);
+
 const StyledSelector = styled.div(
   (props) => css`
     display: flex;
@@ -114,7 +125,9 @@ const StyledRadio = styled.input.attrs({ type: "radio" })`
 
 export const TwoAnswerQuestion = (props) => (
   <StyledFieldset>
-    <StyledLegend>{props.label}</StyledLegend>
+    <StyledLegend>{props.label}
+      {props.hint && <StyledHint>{props.hint}</StyledHint>}
+    </StyledLegend>
     <StyledSelector>
       {props.options.map((option) => (
         <StyledRadioGroup key={option.value}>
