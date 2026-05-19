@@ -1,4 +1,5 @@
-import styled, { css } from 'styled-components'
+import { useEffect, useState } from 'react'
+import styled, { css, keyframes } from 'styled-components'
 import { Link } from 'react-router'
 
 const HeadingSizes =  {
@@ -118,6 +119,52 @@ const UnorderedList = styled.ul(props => css`
   }
 `)
 
+const DescriptionList = styled.dl(props => css`
+  font-family: ${props => props.theme.fonts.body};
+  font-weight: 350;
+  line-height: 125%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  color: ${props => props.theme.text.body};
+  text-align: center;
+  gap: 5rem;
+`)
+
+const DescriptionWrapper = styled.div(props => css`
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 33%;
+    border-bottom: 1px solid ${props => props.theme.text.body};
+    opacity: 0.5;
+  }
+  &:last-child::after {
+    display: none;
+  }
+`)
+
+const DescriptionTerm = styled.dt(props => css`
+  font-weight: 700;
+  font-size: 1.25rem;
+`)
+
+const DescriptionDetails = styled.dd(props => css`
+  margin: 0;
+  font-weight: 350;
+`)
+
 
 const ScreenReaderOnly = styled.span(props => css`
   position:absolute;  
@@ -128,4 +175,95 @@ const ScreenReaderOnly = styled.span(props => css`
   overflow:hidden;  
 `)
 
-export { ExternalLink, Heading, InternalLink, Legend, Paragraph, ScreenReaderOnly, UnorderedList }
+const blinkCursor = keyframes`
+  0%, 49% {
+    border-right-color: currentColor;
+  }
+
+  50%, 100% {
+    border-right-color: transparent;
+  }
+`
+
+const RollingTextViewport = styled.span(props => css`
+  display: inline-grid;
+  overflow: hidden;
+  vertical-align: bottom;
+`)
+
+const RollingTextWord = styled.span(props => css`
+  display: inline-block;
+  white-space: nowrap;
+  border-right: 0.12em solid currentColor;
+  padding-right: 0.08em;
+  animation: ${blinkCursor} 1s steps(1, end) infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    border-right: none;
+    padding-right: 0;
+  }
+`)
+
+const RollingText = ({ terms = [], interval = 2000, typingSpeed = 90, backspaceSpeed = 55, ...props }) => {
+  const safeTerms = terms.length ? terms : ['']
+  const termsKey = safeTerms.join('|')
+  const [index, setIndex] = useState(0)
+  const [displayText, setDisplayText] = useState('')
+  const [isDeleting, setIsDeleting] = useState(false)
+
+  useEffect(() => {
+    setIndex(0)
+    setDisplayText('')
+    setIsDeleting(false)
+  }, [termsKey])
+
+  useEffect(() => {
+    const currentTerm = safeTerms[index] ?? ''
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setDisplayText(currentTerm)
+      return
+    }
+
+    if (safeTerms.length < 2) {
+      setDisplayText(currentTerm)
+      return
+    }
+
+    let timer
+
+    if (!isDeleting && displayText === currentTerm) {
+      timer = window.setTimeout(() => {
+        setIsDeleting(true)
+      }, interval)
+    } else if (isDeleting && displayText.length === 0) {
+      setIsDeleting(false)
+      setIndex(current => (current + 1) % safeTerms.length)
+      return
+    } else {
+      timer = window.setTimeout(() => {
+        if (isDeleting) {
+          setDisplayText(currentTerm.slice(0, Math.max(0, displayText.length - 1)))
+        } else {
+          setDisplayText(currentTerm.slice(0, displayText.length + 1))
+        }
+      }, isDeleting ? backspaceSpeed : typingSpeed)
+    }
+
+    return () => window.clearTimeout(timer)
+  }, [backspaceSpeed, displayText, index, interval, isDeleting, termsKey, typingSpeed])
+
+  return (
+    <RollingTextViewport {...props}>
+      <RollingTextWord aria-hidden='true'>
+        {displayText}
+      </RollingTextWord>
+      <ScreenReaderOnly aria-live='polite'>
+        {safeTerms[index]}
+      </ScreenReaderOnly>
+    </RollingTextViewport>
+  )
+}
+
+export { ExternalLink, Heading, InternalLink, Legend, Paragraph, RollingText, ScreenReaderOnly, UnorderedList, DescriptionList, DescriptionTerm, DescriptionDetails, DescriptionWrapper }
