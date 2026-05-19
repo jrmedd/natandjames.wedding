@@ -5,7 +5,7 @@ const StyledLabel = styled.label(
     display: block;
     font-family: ${(props) => props.theme.fonts.body};
     color: ${(props) => props.theme.text.body};
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   `,
 );
 
@@ -43,7 +43,7 @@ const StyledLegend = styled.legend(
     font-family: ${(props) => props.theme.fonts.body};
     color: ${(props) => props.theme.text.body};
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
   `,
 );
 

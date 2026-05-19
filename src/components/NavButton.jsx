@@ -12,7 +12,6 @@ const NavButton = styled(NavLink)(props => css`
   text-align: center;
   padding: .75rem 1rem;
   box-shadow: 0px 2px 0px 0px ${props => props.theme.interactive};
-  background: ${props => props.theme.background};
   color: ${props => props.theme.interactive};
   text-decoration: none;
   transition: transform .3s ease;
