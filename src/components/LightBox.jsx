@@ -25,7 +25,7 @@ const ImageWrapper = styled.div`
 
 
 // Lightbox component
-export const Lightbox = props => {
+export const LightBox = props => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openLightbox = () => setIsOpen(true);

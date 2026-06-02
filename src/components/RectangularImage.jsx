@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 const StyledPicture = styled.picture(props => css`
   display: block;
-  border-radius: .25rem;
+  border-radius: 1rem;
   overflow: hidden;
   width: 100%;
   aspect-ratio: ${props.$lightbox ? 'unset' : '4/3'};

@@ -35,6 +35,7 @@ export const PageTemplate = props => {
       <Header role='banner'>
         <Heading $screenReaderOnly={location.pathname === '/'} $size='xl' as={Link} to='/' viewTransition aria-label='Home - Nat and James'>Nat and James</Heading>
         <Nav aria-label='primary'>
+          <NavButton to='/rsvp' viewTransition>RSVP</NavButton>
           <NavButton to='/location' viewTransition>Location</NavButton>
           <NavButton to='/timings' viewTransition>Timings</NavButton>
           <NavButton to='/gifts' viewTransition>Gifts</NavButton>
@@ -43,7 +44,7 @@ export const PageTemplate = props => {
       <Main id='main-content'>
         <Outlet />
       </Main>
-      <Footer />
+      {/* <Footer /> */}
     </ContentContainer>
   </ThemeProvider>
 )}

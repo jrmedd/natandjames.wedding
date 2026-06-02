@@ -5,6 +5,7 @@ import { createGlobalStyle } from 'styled-components'
 
 const olive = '#6f744a'
 const ink = '#f9f6e5'
+const stone = '#bcbab0'
 
 const breakpoints = {
   mobile: '640px',

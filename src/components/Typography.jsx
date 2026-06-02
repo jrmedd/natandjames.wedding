@@ -5,6 +5,7 @@ import { Link } from 'react-router'
 const HeadingSizes =  {
   xxxl: css`
   font-size: 4rem;
+  line-height: 1.1;
   `,
   xxl: css`
   font-size: 3rem;
@@ -130,7 +131,7 @@ const DescriptionList = styled.dl(props => css`
   align-items: center;
   color: ${props => props.theme.text.body};
   text-align: center;
-  gap: 5rem;
+  gap: 4rem;
 `)
 
 const DescriptionWrapper = styled.div(props => css`
@@ -143,7 +144,7 @@ const DescriptionWrapper = styled.div(props => css`
   &::after {
     content: '';
     position: absolute;
-    bottom: -2.5rem;
+    bottom: -2rem;
     left: 50%;
     transform: translateX(-50%);
     width: 33%;
@@ -165,6 +166,12 @@ const DescriptionDetails = styled.dd(props => css`
   font-weight: 350;
 `)
 
+const SubText = styled.span(props => css`
+  display: block;
+  font-size: .85rem;
+  margin-top: .75rem;
+  color: ${props => props.theme.text.body};
+`)
 
 const ScreenReaderOnly = styled.span(props => css`
   position:absolute;  
@@ -266,4 +273,4 @@ const RollingText = ({ terms = [], interval = 2000, typingSpeed = 90, backspaceS
   )
 }
 
-export { ExternalLink, Heading, InternalLink, Legend, Paragraph, RollingText, ScreenReaderOnly, UnorderedList, DescriptionList, DescriptionTerm, DescriptionDetails, DescriptionWrapper }
+export { ExternalLink, Heading, InternalLink, Legend, Paragraph, RollingText, ScreenReaderOnly, UnorderedList, DescriptionList, DescriptionTerm, DescriptionDetails, DescriptionWrapper, SubText }

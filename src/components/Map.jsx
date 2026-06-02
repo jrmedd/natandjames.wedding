@@ -12,9 +12,12 @@ const mapsDeepLink = "https://maps.app.goo.gl/RPnynK9A5vti9aW57"
 
 const StyledMap = styled.div(props => css`
   width: 100%;
-  min-height: ${props => props.$minHeight ?? "600px"};
+  aspect-ratio: 1 / 1;
   border: 0;
   border-radius: .75rem;
+  @media (min-width: ${props.theme.breakpoints.mobile}) {
+    aspect-ratio: 4 / 3;
+  }
 `)
 
 const loadGoogleMapsApi = () => {

@@ -7,17 +7,22 @@
   {
     "featureType": "road",
     "elementType": "geometry",
-    "stylers": [{ "color": "#f9f6e5" }]
+    "stylers": [{ "color": "#6f744a" }]
   },
   {
     "featureType": "road",
     "elementType": "geometry.stroke",
-    "stylers": [{ "color": "#f9f6e5" }]
+    "stylers": [{ "visibility": "off" }]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "geometry.fill",
+    "stylers": [{ "color": "#bcbab0" }]
   },
   {
     "featureType": "road",
     "elementType": "labels.text.fill",
-    "stylers": [{ "color": "#6f744a" }]
+    "stylers": [{ "color": "#f9f6e5" }]
   },
   {
     "featureType": "road",
@@ -32,12 +37,12 @@
   {
     "featureType": "road.arterial",
     "elementType": "labels.text.fill",
-    "stylers": [{ "color": "#6f744a" }]
+    "stylers": [{ "color": "#f9f6e5" }]
   },
   {
     "featureType": "road.highway",
     "elementType": "labels.text.fill",
-    "stylers": [{ "color": "#6f744a" }]
+    "stylers": [{ "color": "#f9f6e5" }]
   },
   {
     "featureType": "water",
@@ -47,27 +52,27 @@
   {
     "featureType": "landscape",
     "elementType": "geometry",
-    "stylers": [{ "color": "#6f744a" }]
+    "stylers": [{ "color": "#f9f6e5" }]
   },
   {
     "featureType": "poi.park",
     "elementType": "geometry",
-    "stylers": [{ "color": "#6f744a" }]
+    "stylers": [{ "color": "#f9f6e5" }]
   },
   {
     "featureType": "poi",
     "elementType": "all",
-    "stylers": [{ "visibility": "off" }]
+    "stylers": [{ "visibility": "on" }]
   },
   {
     "featureType": "transit",
     "elementType": "all",
-    "stylers": [{ "visibility": "off" }]
+    "stylers": [{ "visibility": "on" }]
   },
   {
     "featureType": "transit.station.bus",
     "elementType": "all",
-    "stylers": [{ "visibility": "off" }]
+    "stylers": [{ "visibility": "on" }]
   },
   {
     "featureType": "road",
@@ -82,12 +87,12 @@
   {
     "featureType": "poi.business",
     "elementType": "all",
-    "stylers": [{ "visibility": "off" }]
+    "stylers": [{ "visibility": "on" }]
   },
   {
     "featureType": "all",
     "elementType": "labels.icon",
-    "stylers": [{ "visibility": "off" }]
+    "stylers": [{ "visibility": "on" }]
   },
   {
     "featureType": "administrative.land_parcel",
