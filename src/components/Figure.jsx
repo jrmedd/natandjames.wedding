@@ -5,8 +5,9 @@ export const StyledFigure = styled.figure(props => css`
   margin: 0;
   margin-bottom: .5rem;
   position: relative;
-`)
+  `)
 
 export const StyledFigCaption = styled.figcaption(props => css`
   font-size: .8rem;  
+  visibility: hidden;
 `)

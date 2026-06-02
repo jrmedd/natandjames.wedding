@@ -1,5 +1,10 @@
 import { Stack } from "../components/Layout";
-import { ExternalLink, Heading, Paragraph, UnorderedList } from "../components/Typography";
+import {
+  ExternalLink,
+  Heading,
+  Paragraph,
+  UnorderedList,
+} from "../components/Typography";
 import { Map } from "../components/Map";
 import styled from "styled-components";
 
@@ -19,7 +24,7 @@ export const Component = (props) => {
       <Map />
       <Paragraph>
         We're getting married at the beautiful{" "}
-        <ExternalLink href="https://www.manchesterhall.co.uk/">
+        <ExternalLink target="_blank" href="https://www.manchesterhall.co.uk/">
           Manchester Hall
         </ExternalLink>{" "}
         on Bridge Street, over the road from MOJO (afterparty anyone?)
@@ -28,57 +33,86 @@ export const Component = (props) => {
         Getting there
       </Heading>
       <Address>
-        Manchester Hall
-        <br />
-        36 Bridge St
-        <br />
-        Manchester
-        <br />
-        M3 3BT
+        Manchester Hall, 36 Bridge St, Manchester, M3 3BT
       </Address>
       <Paragraph>
-        The venue is just off Deansgate. It's around a 20 minute walk from
-        Manchester Piccadilly station, and a 15 minute walk from Manchester
+        The venue is just off Deansgate. It's around a 20-minute walk from
+        Manchester Piccadilly station, and a 15-minute walk from Manchester
         Victoria station.
       </Paragraph>
-      <Paragraph>
-        There is an open air car park on{" "}
-        <ExternalLink href="https://maps.app.goo.gl/eLLvUpa293iKaucw5">
-          {" "}
-          Bridge Street
-        </ExternalLink>{" "}
-        or a multi-storey car park on{" "}
-        <ExternalLink href="https://maps.app.goo.gl/XStRfKYLxw8kvr4XA">
-          {" "}
-          King Street
-        </ExternalLink>
-        , a short walk from the venue.
-      </Paragraph>
       <Heading as="h2" $size="l">
-        Accommodation
+        Nearby car parks
       </Heading>
-      <Paragraph>Hotels near the venue include:</Paragraph>
+      {/* <Paragraph>
+        There are a number of car parking options close to the venue:
+      </Paragraph> */}
       <UnorderedList>
         <li>
-          <ExternalLink href="https://maps.app.goo.gl/rAr1oHhSU6Jf9crA7">
+          <ExternalLink
+            target="_blank"
+            href="https://maps.app.goo.gl/7mMV8hPUepFwUyex5"
+          >
+            NCP Spinningfields
+          </ExternalLink>
+        </li>
+        <li>
+          <ExternalLink
+            target="_blank"
+            href="https://maps.app.goo.gl/B98Ct4EnqnMSvkt76"
+          >
+            NCP Salford New Bailey
+          </ExternalLink>
+        </li>
+        <li>
+          <ExternalLink
+            target="_blank"
+            href="https://maps.app.goo.gl/ZJQXyDPVbmVCV5Af8"
+          >
+            NCP Stanley Street
+          </ExternalLink>
+        </li>
+      </UnorderedList>
+      <Heading as="h2" $size="l">
+        Nearby hotels
+      </Heading>
+      {/* <Paragraph>Hotels near the venue include:</Paragraph> */}
+      <UnorderedList>
+        <li>
+          <ExternalLink
+            target="_blank"
+            href="https://maps.app.goo.gl/rAr1oHhSU6Jf9crA7"
+          >
             Yotel
           </ExternalLink>
         </li>
         <li>
-          <ExternalLink href="https://maps.app.goo.gl/nhYMcdkRxm6GB5dXA">
+          <ExternalLink
+            target="_blank"
+            href="https://maps.app.goo.gl/nhYMcdkRxm6GB5dXA"
+          >
             Moxy
           </ExternalLink>
         </li>
         <li>
-          <ExternalLink href="https://maps.app.goo.gl/9n2Zt7sH8h5eLh1bA">
+          <ExternalLink
+            target="_blank"
+            href="https://maps.app.goo.gl/9n2Zt7sH8h5eLh1bA"
+          >
             The Lowry
+          </ExternalLink>
+        </li>
+        <li>
+          <ExternalLink
+            target="_blank"
+            href="https://maps.app.goo.gl/E5Srs3L36jQYxAcaA"
+          >
+            Motel One Royal Exchange
           </ExternalLink>
         </li>
       </UnorderedList>
       <Paragraph>
-        There are also rooms available at Manchester Hall, please let us know
-        when you RSVP if you're interested. There are limited limited number of
-        rooms available so we can't guarantee there'll be one for everyone, but
+        There are rooms available at Manchester Hall, please let us know
+        when you RSVP if you're interested. There are limited rooms available, and we can't guarantee there'll be one for everyone, but
         we'll do our best!
       </Paragraph>
     </Stack>

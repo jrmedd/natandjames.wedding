@@ -3,9 +3,9 @@ import styled, { css } from 'styled-components'
 const ContentContainer = styled.div(
   (props) => css`
     margin: 0 auto;
-    width: 40rem;
+    width: 46rem;
     max-width: 90%;
-    padding: 2rem 0;
+    padding: 2rem 0 4rem 0;
     display: flex;
     flex-flow: column;
     gap: 2rem;
@@ -53,7 +53,7 @@ const Nav = styled.nav(props => css`
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
   height: fit-content;
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
     width: 100vw;
