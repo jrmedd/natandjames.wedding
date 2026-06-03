@@ -32,7 +32,7 @@ export const PageTemplate = props => {
     <ScreenReaderOnly  aria-live='polite' aria-atomic='true' as='aside' ref={pageStartRef} tabIndex='-1'>{`Viewing page: ${document.title}`}</ScreenReaderOnly>
     <SkipLink as='a' href='#main-content'>Skip to main content</SkipLink>
     <ContentContainer>
-      <Header role='banner'>
+      <Header $gap={location.pathname === '/' ? '0rem' : '1rem'} role='banner'>
         <Heading $screenReaderOnly={location.pathname === '/'} $size='xl' as={Link} to='/' viewTransition aria-label='Home - Nat and James'>Nat and James</Heading>
         <Nav aria-label='primary'>
           <NavButton to='/rsvp' viewTransition>RSVP</NavButton>

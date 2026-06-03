@@ -1,27 +1,20 @@
 import styled from "styled-components";
 import { useState } from "react";
-import { Stack } from "../components/Layout";
+import { Stack, HR } from "../components/Layout";
 import { Heading, Paragraph, ScreenReaderOnly } from "../components/Typography";
 import { Button } from "../components/Button";
 import { FormInput, TwoAnswerQuestion } from "../components/FormInputs";
 
 const RSVP_ENDPOINT =
-  "https://script.google.com/macros/s/AKfycbyTogug2DLGjXcMxBn68KUJ5_nR8tPQ1jwRz4Es4-KSCtjFsclk2okp5ksrZtWxP8RX/exec";
+  "https://script.google.com/macros/s/AKfycbySwaxIGyxwybFtyLyeYJR0xToFsqi4qC2-RX2U-7pf0qrOwxW4-3O49BcYnAtEzhoQ/exec";
 
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
   width: 100%;
   & > button {
     align-self: center;
   }
-`;
-
-const StyledHR = styled.hr`
-  border: none;
-  border-top: 1px solid ${(props) => props.theme.text.body};
-  margin: 2rem 0;
 `;
 
 const FollowUpSection = styled.div`
@@ -43,7 +36,6 @@ const FollowUpSection = styled.div`
 const FollowUpSectionInner = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
 `;
 
 export const Component = (props) => {
@@ -51,6 +43,7 @@ export const Component = (props) => {
   const [submitError, setSubmitError] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [attendingSelection, setAttendingSelection] = useState(null);
+  const [bringingChildren, setBringingChildren] = useState(null);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -93,7 +86,7 @@ export const Component = (props) => {
   };
 
   return (
-    <Stack $alignMobile="center" $gap="2rem" $width="100%">
+    <Stack $alignMobile="center" $width="100%">
       <Heading $size="xl" id="career">
         RSVP
       </Heading>
@@ -126,21 +119,36 @@ export const Component = (props) => {
           <FollowUpSection $collapsed={attendingSelection === "no"}>
             <FollowUpSectionInner>
               <TwoAnswerQuestion
-                name="guestType"
-                label="Are you a 12PM or a 6PM guest?"
+                name="bringingChildren"
+                label="Are you bringing children?"
                 options={[
-                  { label: "12PM", value: "12pm" },
-                  { label: "6PM", value: "6pm" },
+                  { label: "Yes", value: "yes" },
+                  { label: "No", value: "no" },
                 ]}
+                onChange={(event) => setBringingChildren(event.target.value)}
               />
+              <FollowUpSection $collapsed={bringingChildren !== "yes"}>
+                <FollowUpSectionInner>
+                  <FormInput
+                    name="numberOfChildren"
+                    label="Number of children"
+                    type="text"
+                  />
+                  <FormInput
+                    name="agesOfChildren"
+                    label="Ages of children"
+                    type="text"
+                  />
+                </FollowUpSectionInner>
+              </FollowUpSection>
               <FormInput
                 name="dietaryRequirements"
-                label="Dietary requirements"
+                label="Any dietary requirements?"
                 type="text"
               />
               <TwoAnswerQuestion
                 name="roomAtManchesterHall"
-                label="Do you need a room at Manchester Hall?"
+                label="Would you like a room at Manchester Hall?"
                 hint="There are a limited number of rooms available, so we can't guarantee there'll be one for everyone, but we'll do our best!"
                 options={[
                   { label: "Yes", value: "yes" },
@@ -149,7 +157,7 @@ export const Component = (props) => {
               />
             </FollowUpSectionInner>
           </FollowUpSection>
-          <StyledHR />
+          {/* <HR /> */}
           <Button as="button" type="submit" disabled={isSubmitting}>
             {isSubmitting ? "Submitting..." : "Submit"}
           </Button>

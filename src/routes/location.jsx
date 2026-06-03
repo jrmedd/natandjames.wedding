@@ -1,4 +1,4 @@
-import { Stack } from "../components/Layout";
+import { Stack, HR } from "../components/Layout";
 import {
   ExternalLink,
   Heading,
@@ -29,6 +29,7 @@ export const Component = (props) => {
         </ExternalLink>{" "}
         on Bridge Street, over the road from MOJO (afterparty anyone?)
       </Paragraph>
+      <HR />
       <Heading as="h2" $size="l">
         Getting there
       </Heading>
@@ -40,12 +41,13 @@ export const Component = (props) => {
         Manchester Piccadilly station, and a 15-minute walk from Manchester
         Victoria station.
       </Paragraph>
+      <HR />
       <Heading as="h2" $size="l">
         Nearby car parks
       </Heading>
       {/* <Paragraph>
         There are a number of car parking options close to the venue:
-      </Paragraph> */}
+        </Paragraph> */}
       <UnorderedList>
         <li>
           <ExternalLink
@@ -72,6 +74,7 @@ export const Component = (props) => {
           </ExternalLink>
         </li>
       </UnorderedList>
+      <HR />
       <Heading as="h2" $size="l">
         Nearby hotels
       </Heading>

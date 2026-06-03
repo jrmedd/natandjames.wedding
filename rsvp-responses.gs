@@ -3,7 +3,7 @@ const SHEET_NAME = 'Responses';
 /**
  * Web app endpoint for RSVP submissions.
  * Expects JSON in the request body with keys:
- * name, email, attending, guestType, dietaryRequirements, roomAtManchesterHall
+ * name, email, attending, bringingChildren, numberOfChildren, agesOfChildren, dietaryRequirements, roomAtManchesterHall
  */
 function doPost(e) {
   try {
@@ -12,18 +12,22 @@ function doPost(e) {
     const name = payload.name || '';
     const email = payload.email || '';
     const attending = payload.attending || '';
-    const guestType = payload.guestType || '';
+    const bringingChildren = payload.bringingChildren || '';
+    const numberOfChildren = payload.numberOfChildren || '';
+    const agesOfChildren = payload.agesOfChildren || '';
     const dietaryRequirements = payload.dietaryRequirements || '';
     const roomAtManchesterHall = payload.roomAtManchesterHall || '';
 
     const sheet = getOrCreateResponsesSheet_();
 
-    // A: Name, B: Email, C: Attending, D: Guest Type, E: Dietary, F: Manchester Hall
+    // A: Name, B: Email, C: Attending, D: Bringing Children, E: Number of Children, F: Ages of Children, G: Dietary, H: Manchester Hall
     sheet.appendRow([
       name,
       email,
       attending,
-      guestType,
+      bringingChildren,
+      numberOfChildren,
+      agesOfChildren,
       dietaryRequirements,
       roomAtManchesterHall,
     ]);
@@ -47,11 +51,13 @@ function getOrCreateResponsesSheet_() {
   }
 
   if (sheet.getLastRow() === 0) {
-    sheet.getRange('A1:F1').setValues([[
+    sheet.getRange('A1:H1').setValues([[
       'Name',
       'Email',
       'Attending',
-      'Guest Type',
+      'Bringing Children',
+      'Number of Children',
+      'Ages of Children',
       'Dietary Requirements',
       'Manchester Hall',
     ]]);
