@@ -5,7 +5,8 @@ const StyledLabel = styled.label(
     display: block;
     font-family: ${(props) => props.theme.fonts.body};
     color: ${(props) => props.theme.text.body};
-    font-size: 1.5rem;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
   `,
 );
 
@@ -21,13 +22,14 @@ const StyledInput = styled.input(
     border: none;
     border-radius: 0.25rem;
     box-shadow: 0 0 0 1px ${(props) => props.theme.text.body};
+    margin-bottom: 2rem;
     outline: none;
     transition: box-shadow 0.2s ease;
     &:active,
     &:focus {
       box-shadow: 0 0 0 2px ${(props) => props.theme.text.body};
     }
-  `,
+    `,
 );
 
 const StyledFieldset = styled.fieldset(
@@ -35,6 +37,7 @@ const StyledFieldset = styled.fieldset(
     border: none;
     padding: 0;
     margin: 0;
+    margin-bottom: 2rem;
   `,
 );
 
@@ -42,8 +45,8 @@ const StyledLegend = styled.legend(
   (props) => css`
     font-family: ${(props) => props.theme.fonts.body};
     color: ${(props) => props.theme.text.body};
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
   `,
 );
 

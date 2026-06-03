@@ -9,15 +9,19 @@ const HeadingSizes =  {
   `,
   xxl: css`
   font-size: 3rem;
+  line-height: 1.1;
   `,
   xl: css`
   font-size: 1.9rem;
+  line-height: 1.1;
   `,
   l: css`
   font-size: 1.5rem;
+  line-height: 1.1;
   `,
   m: css`
   font-size: 1.25rem;
+  line-height: 1.1;
   `
 }
 
