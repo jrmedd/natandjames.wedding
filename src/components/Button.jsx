@@ -17,6 +17,10 @@ const Button = styled(NavLink)(props => css`
   color: ${props => props.theme.background};
   text-decoration: none;
   transition: transform .3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
   &:active {
     transform: scale(0.9);
   }
