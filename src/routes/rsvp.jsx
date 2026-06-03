@@ -133,11 +133,13 @@ export const Component = (props) => {
                     name="numberOfChildren"
                     label="Number of children"
                     type="text"
+                    inputMode="numeric"
                   />
                   <FormInput
                     name="agesOfChildren"
                     label="Ages of children"
                     type="text"
+                    inputMode="numeric"
                   />
                 </FollowUpSectionInner>
               </FollowUpSection>
