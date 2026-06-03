@@ -41,7 +41,7 @@ export const Component = (props) => {
       <Button
         aria-label="Contribute via Google Pay or Apple Pay on Starling Bank"
         as="a"
-        href="https://settleup.starlingbank.com/james-medd-a78413/pay"
+        href="https://settleup.starlingbank.com/james-medd-a78413"
       >
         <GooglePay /> <ApplePay />
       </Button>
