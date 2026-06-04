@@ -74,8 +74,11 @@ const Legend  = styled.legend(props => css`
 const ExternalLink = styled.a(props => css`
   color: ${props => props.theme.interactive};
   display: inline-block;
-  box-shadow:  0 1px 0 0 ${props => props.theme.interactive};
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 0.35rem;
+  text-decoration-thickness: 1px;
+  text-decoration-style: dashed;
+  font-weight: 600;
   &:focus {
     outline: 2px solid ${props => props.theme.interactive};
   }
