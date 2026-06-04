@@ -34,7 +34,9 @@ export const Component = (props) => {
         Getting there
       </Heading>
       <Address>
-        Manchester Hall, 36 Bridge St, Manchester, M3 3BT
+        <ExternalLink target="_blank" href="https://maps.app.goo.gl/mxwgh9WdyNoRU5iC9">
+          Manchester Hall, 36 Bridge St, Manchester, M3 3BT
+        </ExternalLink>
       </Address>
       <Paragraph>
         The venue is just off Deansgate. It's around a 20-minute walk from
@@ -45,9 +47,6 @@ export const Component = (props) => {
       <Heading as="h2" $size="l">
         Nearby car parks
       </Heading>
-      {/* <Paragraph>
-        There are a number of car parking options close to the venue:
-        </Paragraph> */}
       <UnorderedList>
         <li>
           <ExternalLink
@@ -83,7 +82,7 @@ export const Component = (props) => {
         <li>
           <ExternalLink
             target="_blank"
-            href="https://maps.app.goo.gl/rAr1oHhSU6Jf9crA7"
+            href="https://maps.app.goo.gl/TVecNEv6LnxsqQQy7"
           >
             Yotel
           </ExternalLink>
@@ -99,7 +98,7 @@ export const Component = (props) => {
         <li>
           <ExternalLink
             target="_blank"
-            href="https://maps.app.goo.gl/9n2Zt7sH8h5eLh1bA"
+            href="https://maps.app.goo.gl/VrjWkXh2tAxXe2Nd9"
           >
             The Lowry
           </ExternalLink>
@@ -107,7 +106,7 @@ export const Component = (props) => {
         <li>
           <ExternalLink
             target="_blank"
-            href="https://maps.app.goo.gl/E5Srs3L36jQYxAcaA"
+            href="https://maps.app.goo.gl/SBvt2JGwUWdMgJju9"
           >
             Motel One Royal Exchange
           </ExternalLink>
