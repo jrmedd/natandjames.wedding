@@ -61,6 +61,8 @@ const Heading = styled.h1(props => css`
     opacity: 0;
     max-height: 0;
     transform: scaleY(0.85);
+    pointer-events: none;
+    z-index: -1;
   `};
 `)
 
