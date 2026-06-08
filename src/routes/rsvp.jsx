@@ -121,6 +121,7 @@ export const Component = (props) => {
               <TwoAnswerQuestion
                 name="bringingChildren"
                 label="Are you bringing children?"
+                hint="We'll do our best to accommodate children, however we are capped at a number of guests for our daytime ceremony and lunch, so we may not have space for everyone."
                 options={[
                   { label: "Yes", value: "yes" },
                   { label: "No", value: "no" },
@@ -136,7 +137,7 @@ export const Component = (props) => {
                   />
                   <FormInput
                     name="agesOfChildren"
-                    label="Ages of children"
+                    label="How old will they be on 28th November 2026?"
                     type="text"
                   />
                 </FollowUpSectionInner>
